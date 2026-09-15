@@ -4,6 +4,8 @@
 
 빌드 도구 없이 HTML 한 장으로 동작하는 정적 사이트입니다. Vercel로 배포합니다.
 
+운영 주소: <https://best-ing.vercel.app>
+
 ## 구조
 
 ```
@@ -25,9 +27,17 @@ npx serve portfolio
 
 ## 배포
 
-`master` 브랜치에 푸시하면 Vercel이 자동으로 다시 배포합니다.
+Vercel CLI로 직접 올립니다.
+
+```bash
+vercel --prod
+```
+
 `vercel.json` 의 `outputDirectory` 가 `portfolio` 를 가리키므로,
 사이트 루트(`/`)에서 `portfolio/index.html` 이 서빙됩니다.
+
+Git 연동(푸시하면 자동 배포)은 아직 걸어두지 않았습니다.
+필요하면 Vercel 프로젝트 설정의 Git 탭에서 이 레포를 연결하세요.
 
 ## 메모
 
