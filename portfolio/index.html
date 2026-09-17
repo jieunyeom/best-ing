@@ -272,6 +272,79 @@ section.blue .blbl{color:rgba(255,255,255,.6)}
 .ftile:hover .fmeta,.ftile:focus-visible .fmeta{opacity:1}
 @media (hover:none){.ftile .fmeta{opacity:1}}
 @media (max-width:560px){.feed{gap:6px}.ftile{border-radius:10px}.ftile .fmeta{font-size:10.5px;padding:30px 10px 10px}}
+/* ── tool mockups (실제 도구 구조 재구성 · 라이트 고정) ── */
+.tkwin{background:#fff;border:1px solid #D8DCE8;border-radius:12px;overflow:hidden;margin-top:20px;
+  font-size:11.5px;line-height:1.5;color:#3C4560;text-align:left}
+.tkbar{background:#F1F3F9;border-bottom:1px solid #E2E6F0;padding:10px 14px;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.tkbar b{font-size:12.5px;color:#222a42;font-weight:700}
+.tkbar .msub{font-size:10.5px;color:#8A92AB}
+.tkbar .mtabs{display:flex;gap:5px;margin-left:auto}
+.tkbar .mtabs i{font-style:normal;font-size:10px;color:#8A92AB;padding:3px 10px;border-radius:6px;background:#E6EAF3}
+.tkbar .mtabs i.on{background:#fff;color:#2F3550;font-weight:700}
+.tkbody{padding:14px}
+.mblock{margin-top:14px}
+.mblock:first-child{margin-top:0}
+.mh{font-size:10.5px;font-weight:700;letter-spacing:.08em;color:#8A92AB;margin-bottom:7px;display:flex;gap:8px;align-items:baseline}
+.mh span{font-weight:500;letter-spacing:0;margin-left:auto;color:#A6ADC2}
+
+.mkpis{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.mkpi{border:1px solid #E4E8F1;border-radius:9px;padding:10px 11px;background:#FCFDFF}
+.mkpi .t{font-size:10px;color:#8A92AB;margin-bottom:5px}
+.mkpi .v{font-size:16px;font-weight:700;color:#222a42;letter-spacing:-.02em;font-family:"IBM Plex Mono",monospace}
+.mkpi .v em{font-style:normal;font-size:10px;color:#8A92AB;font-weight:500}
+
+.msig{display:inline-block;font-size:9.5px;font-weight:700;padding:2px 7px;border-radius:5px;margin-top:6px}
+.msig.ok{background:#E7F4EC;color:#1A7F4B}
+.msig.warn{background:#FFF4E2;color:#B26A00}
+.msig.bad{background:#FCEBE8;color:#C0392B}
+.msig.mut{background:#EFF1F6;color:#8A92AB}
+
+.mtbl{width:100%;border-collapse:collapse;font-size:11px}
+.mtbl th,.mtbl td{padding:7px 9px;border-bottom:1px solid #EDF0F6;text-align:right;white-space:nowrap}
+.mtbl th:first-child,.mtbl td:first-child{text-align:left}
+.mtbl thead th{background:#F7F9FC;color:#8A92AB;font-weight:600;font-size:10px;letter-spacing:.03em}
+.mtbl tbody tr:last-child td{border-bottom:0}
+.mtbl .ar{font-family:"IBM Plex Mono",monospace;font-size:12px;color:#4B5FE8;font-weight:700}
+.mtbl .dn{color:#C0392B}.mtbl .up{color:#1A7F4B}
+.mtblw{overflow-x:auto;border:1px solid #E4E8F1;border-radius:9px}
+.mtblw .mtbl{min-width:440px}
+
+/* 21일 바 + 프로모션 음영 */
+.mbars{position:relative;display:flex;align-items:flex-end;gap:3px;height:74px;padding:0 2px;
+  border-bottom:1px solid #E4E8F1;border-radius:2px}
+.mbars i{flex:1;background:#C9D2EA;border-radius:2px 2px 0 0;min-width:0}
+.mbars i.hi{background:#4B5FE8}
+.mband{position:absolute;top:-4px;bottom:0;background:rgba(124,58,237,.12);border-left:1px dashed #9A6CE8;border-right:1px dashed #9A6CE8;pointer-events:none}
+.mbandlab{font-size:9.5px;color:#7C3AED;margin-top:6px;display:block}
+
+/* 히트맵 */
+.mheat{display:grid;grid-template-columns:52px repeat(12,1fr);gap:3px;font-size:9px;min-width:460px}
+.mheat b{font-weight:600;color:#8A92AB;font-size:9px;display:flex;align-items:center;justify-content:center;height:20px}
+.mheat u{text-decoration:none;height:20px;border-radius:3px;display:block}
+.mheatw{overflow-x:auto}
+
+/* 드롭존 */
+.mdrop{border:1.5px dashed #D2D8E6;border-radius:10px;padding:16px;text-align:center;background:#FAFBFE}
+.mdrop .d1{font-size:12px;font-weight:650;color:#2F3550}
+.mdrop .d2{font-size:10.5px;color:#8A92AB;margin-top:3px}
+.mdrop .dpill{display:inline-block;font-size:10px;padding:3px 10px;border-radius:999px;background:#E7F4EC;color:#1A7F4B;margin:8px 4px 0;font-weight:600}
+
+.mnote{background:#F7F9FC;border-left:3px solid #4B5FE8;border-radius:0 8px 8px 0;padding:9px 12px;font-size:10.5px;color:#54607A;margin-top:10px;line-height:1.65}
+.mnote b{color:#2F3550}
+.mnote.warn{border-left-color:#B26A00;background:#FFFBF3;color:#6B4E17}
+
+.mask{background:#3C4560;color:#3C4560;border-radius:3px;padding:0 2px;user-select:none}
+@media (max-width:560px){.mkpis{grid-template-columns:repeat(2,1fr)}}
+
+/* 소재 시트 */
+.sheetgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px}
+.shot{display:block;width:100%;padding:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;
+  background:var(--paper);cursor:pointer;font:inherit}
+.shot img{width:100%;display:block}
+.shot:hover{border-color:var(--royal)}
+.shot:focus-visible{outline:3px solid var(--royal);outline-offset:3px}
+@media (max-width:760px){.sheetgrid{grid-template-columns:1fr}}
+
 
 /* ── lightbox ── */
 .lb{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;
@@ -279,6 +352,9 @@ section.blue .blbl{color:rgba(255,255,255,.6)}
 .lb.on{display:flex}
 .lbin{position:relative;width:100%;max-width:min(88vw,480px);display:flex;flex-direction:column;gap:14px}
 .lbimg{width:100%;aspect-ratio:4/5;object-fit:contain;display:block;border-radius:14px;background:#0a0c1a}
+.lbimg.wide{aspect-ratio:auto;max-height:74vh}
+.lb.wide .lbin{max-width:min(94vw,1040px)}
+.lb.wide .lbprev,.lb.wide .lbnext{display:none}
 .lbbar{display:flex;align-items:baseline;justify-content:space-between;gap:16px;color:rgba(255,255,255,.6);font-size:12.5px}
 .lbbar strong{display:block;color:#fff;font-size:14.5px;font-weight:600;margin-bottom:3px;letter-spacing:-.01em}
 .lbnav,.lbx{position:absolute;border:1px solid rgba(255,255,255,.26);background:rgba(12,14,32,.6);
@@ -318,6 +394,8 @@ section.blue .blbl{color:rgba(255,255,255,.6)}
 .sheet .tabs i{font-style:normal;font-size:10px;color:#8A92AB;padding:4px 11px;border-radius:6px}
 .sheet .tabs i.on{background:#fff;color:#2F3550;font-weight:700;box-shadow:0 1px 3px rgba(0,0,0,.08)}
 .sheetwrap{overflow-x:auto}
+/* 그리드/플렉스 아이템의 기본 min-width:auto 때문에 overflow-x:auto 래퍼가 줄지 않고 페이지를 밀어내던 문제 */
+.card,.sheetwrap,.mheatw,.mtblw,.tkwin,.tbl{min-width:0}
 .sheetwrap .sheet{min-width:520px}
 </style>
 </head>
@@ -804,6 +882,16 @@ section.blue .blbl{color:rgba(255,255,255,.6)}
       </div>
     </div>
 
+    <div class="sheetgrid">
+      <button class="shot" type="button" data-src="img/creative/banners-01.jpg" data-t="네이버 · 자사몰 운영 배너" data-m="시즌 · 프로모션 소재 일부">
+        <img src="img/creative/banners-01.jpg" alt="보만 제품 운영 배너 모음 — 스팀다리미 · 진공쌀통 · 물걸레청소기 · 무선청소기 · 추석세일 · 믹서기 · 채칼 · 족욕기" loading="lazy">
+      </button>
+      <button class="shot" type="button" data-src="img/creative/banners-02.jpg" data-t="얼리버드 · 시즌 특가 배너" data-m="제품별 혜택 소구 소재 일부">
+        <img src="img/creative/banners-02.jpg" alt="보만 얼리버드 특가 배너 모음 — 여행용 스팀다리미 · 에어프라이어 · 믹서기 · 제습기 · 써큘레이터" loading="lazy">
+      </button>
+    </div>
+    <p class="cap">제품 선정 · 소구점 · 카피 · 혜택 구조를 직접 기획하고 운영한 소재입니다. 썸네일을 누르면 크게 볼 수 있습니다.</p>
+
     <div class="band">
       <h3>소재는 만들고 끝내지 않았습니다</h3>
       <p>제품 USP를 기능형·라이프스타일형·혜택형으로 분해해 방향을 나누고, 반복되는 표현 패턴은 모듈 템플릿으로 정리했습니다. 소재ID와 태깅 규칙을 붙여 채널을 가로질러 같은 소재를 추적할 수 있게 했습니다.</p>
@@ -874,6 +962,123 @@ section.blue .blbl{color:rgba(255,255,255,.6)}
     <div class="band">
       <h3>제작 시간을 줄인 만큼 편수를 늘렸습니다</h3>
       <p>카드뉴스는 한 편 잘 만드는 것보다 꾸준히 올리는 쪽이 성과로 이어집니다. 틀과 조판을 도구로 묶어둔 이유가 여기에 있습니다. 같은 시간에 더 많은 제품을 다룰 수 있게 되면서, 소재를 정하고 반응을 확인하는 데 시간을 더 쓰고 있습니다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== OPERATING TOOLS ========== -->
+<section>
+  <div class="page">
+    <div class="tag mono">OPERATING TOOLS</div>
+    <h2>보던 화면이 없으면 직접 만들었습니다</h2>
+    <p class="lead">엑셀로 매번 다시 집계하던 일을 도구로 옮겼습니다. 숫자를 띄우는 데서 끝내지 않고, 무엇을 보고 어떻게 판단할지까지 화면 안에 적어둡니다.</p>
+
+    <div style="display:grid;gap:22px">
+
+      <div class="card">
+        <div class="no mono">TOOL 01 · 매일</div>
+        <h3>일자별 신호판</h3>
+        <p style="margin:0">아침에 10초 안에 "어제 이상이 있었나"만 판정하는 화면입니다. 원인은 여기서 찾지 않습니다. 배지가 뜨면 어디를 열어볼지까지만 알려주고 주차별 대시보드로 넘깁니다.</p>
+        <div class="tkwin">
+          <div class="tkbar"><b>○○ 일자별 신호판</b><span class="msub">판단하지 않고 신호만 봅니다</span>
+            <span class="mtabs"><i>월별</i><i>주차별</i><i class="on">일자별</i></span></div>
+          <div class="tkbody">
+            <div class="mblock">
+              <div class="mh">어제 지표<span>전일 대비</span></div>
+              <div class="mkpis">
+                <div class="mkpi"><div class="t">매출액</div><div class="v">—<em> 원</em></div><div class="msig bad">이상 ▼</div></div>
+                <div class="mkpi"><div class="t">유입수</div><div class="v">—</div><div class="msig ok">정상 →</div></div>
+                <div class="mkpi"><div class="t">전환율</div><div class="v">—<em> %</em></div><div class="msig bad">이상 ▼</div></div>
+                <div class="mkpi"><div class="t">광고비</div><div class="v">—<em> 원</em></div><div class="msig ok">정상 →</div></div>
+              </div>
+            </div>
+            <div class="mblock">
+              <div class="mh">최근 21일 추이<span>30 / 60 / 90일로 창 길이 전환</span></div>
+              <div class="mbars"><i class="" style="height:40%"></i><i class="" style="height:44%"></i><i class="" style="height:37%"></i><i class="" style="height:42%"></i><i class="" style="height:48%"></i><i class="" style="height:41%"></i><i class="" style="height:46%"></i><i class="" style="height:43%"></i><i class="" style="height:39%"></i><i class="" style="height:45%"></i><i class="" style="height:51%"></i><i class="hi" style="height:76%"></i><i class="hi" style="height:93%"></i><i class="hi" style="height:100%"></i><i class="hi" style="height:88%"></i><i class="hi" style="height:73%"></i><i class="" style="height:47%"></i><i class="" style="height:38%"></i><i class="" style="height:35%"></i><i class="" style="height:41%"></i><i class="" style="height:43%"></i><span class="mband" style="left:52.4%;width:23.8%"></span></div>
+              <span class="mbandlab">▨ 보라색 음영 = 프로모션 진행 구간 · 음영 안과 밖을 섞어 비교하면 해석이 무효가 됩니다</span>
+            </div>
+            <div class="mblock">
+              <div class="mh">매출이 빠졌을 때 — 조합으로 읽습니다</div>
+              <div class="mtblw"><table class="mtbl">
+                <thead><tr><th>유입</th><th style="text-align:left">전환율</th><th style="text-align:left">무슨 일인가</th><th style="text-align:left">어디를 보나</th></tr></thead>
+                <tbody>
+                  <tr><td class="ar dn">↓</td><td style="text-align:left" class="ar">→</td><td style="text-align:left"><b>트래픽 문제</b></td><td style="text-align:left">광고비 축소 · 노출 감소 · 조기소진</td></tr>
+                  <tr><td class="ar">→</td><td style="text-align:left" class="ar dn">↓</td><td style="text-align:left"><b>전환 문제</b></td><td style="text-align:left">가격 역전 · 품절 · 상세페이지 · 경쟁사</td></tr>
+                  <tr><td class="ar dn">↓</td><td style="text-align:left" class="ar dn">↓</td><td style="text-align:left"><b>프로모션 종료 · 시즌 이탈</b></td><td style="text-align:left">음영 구간 경계와 대조</td></tr>
+                  <tr><td class="ar">→</td><td style="text-align:left" class="ar">→</td><td style="text-align:left"><b>객단가 문제</b></td><td style="text-align:left">주문당 금액 · 구성 변화</td></tr>
+                </tbody></table></div>
+              <div class="mnote">광고비가 함께 움직였다면 — <b>광고비↑ 유입→</b> 는 CPC 상승이나 경쟁 심화, <b>광고비→ 유입↓</b> 는 노출 감소나 소재 피로 쪽입니다.</div>
+            </div>
+          </div>
+        </div>
+        <p class="cap">실제 도구의 화면 구조를 다시 그린 것입니다. 브랜드명은 가렸고 수치는 전부 비웠습니다.</p>
+      </div>
+
+      <div class="card">
+        <div class="no mono">TOOL 02 · 월 · 분기</div>
+        <h3>판매채널 대시보드</h3>
+        <p style="margin:0">거래처 · 품번 · 카테고리를 한 화면에서 파고들게 만든 도구입니다. 연 × 월 매트릭스, 시즌 지수, 집중도, 재고 소진 개월수까지 붙여 지금 무엇을 밀고 무엇을 정리할지 판단합니다.</p>
+        <div class="tkwin">
+          <div class="tkbar"><b>○○ 판매채널 대시보드</b><span class="msub">거래처 · 품번 · 카테고리 드릴다운</span>
+            <span class="mtabs"><i class="on">카테고리</i><i>거래처</i><i>품번</i></span></div>
+          <div class="tkbody">
+            <div class="mblock">
+              <div class="mh">카테고리별 시즌 지수<span>연도별 1~12월 겹쳐보기</span></div>
+              <div class="mheatw"><div class="mheat"><b></b><b>1</b><b>2</b><b>3</b><b>4</b><b>5</b><b>6</b><b>7</b><b>8</b><b>9</b><b>10</b><b>11</b><b>12</b><b style="justify-content:flex-start;color:#54607A">가습기</b><u style="background:rgba(75,95,232,0.88)"></u><u style="background:rgba(75,95,232,0.72)"></u><u style="background:rgba(75,95,232,0.34)"></u><u style="background:rgba(75,95,232,0.14)"></u><u style="background:rgba(75,95,232,0.07)"></u><u style="background:rgba(75,95,232,0.04)"></u><u style="background:rgba(75,95,232,0.04)"></u><u style="background:rgba(75,95,232,0.07)"></u><u style="background:rgba(75,95,232,0.20)"></u><u style="background:rgba(75,95,232,0.46)"></u><u style="background:rgba(75,95,232,0.80)"></u><u style="background:rgba(75,95,232,0.95)"></u><b style="justify-content:flex-start;color:#54607A">써큘레이터</b><u style="background:rgba(75,95,232,0.05)"></u><u style="background:rgba(75,95,232,0.05)"></u><u style="background:rgba(75,95,232,0.11)"></u><u style="background:rgba(75,95,232,0.30)"></u><u style="background:rgba(75,95,232,0.70)"></u><u style="background:rgba(75,95,232,0.95)"></u><u style="background:rgba(75,95,232,0.90)"></u><u style="background:rgba(75,95,232,0.60)"></u><u style="background:rgba(75,95,232,0.20)"></u><u style="background:rgba(75,95,232,0.08)"></u><u style="background:rgba(75,95,232,0.05)"></u><u style="background:rgba(75,95,232,0.05)"></u><b style="justify-content:flex-start;color:#54607A">제습기</b><u style="background:rgba(75,95,232,0.07)"></u><u style="background:rgba(75,95,232,0.07)"></u><u style="background:rgba(75,95,232,0.14)"></u><u style="background:rgba(75,95,232,0.26)"></u><u style="background:rgba(75,95,232,0.46)"></u><u style="background:rgba(75,95,232,0.90)"></u><u style="background:rgba(75,95,232,0.95)"></u><u style="background:rgba(75,95,232,0.68)"></u><u style="background:rgba(75,95,232,0.28)"></u><u style="background:rgba(75,95,232,0.11)"></u><u style="background:rgba(75,95,232,0.07)"></u><u style="background:rgba(75,95,232,0.07)"></u><b style="justify-content:flex-start;color:#54607A">에어프라이어</b><u style="background:rgba(75,95,232,0.62)"></u><u style="background:rgba(75,95,232,0.50)"></u><u style="background:rgba(75,95,232,0.40)"></u><u style="background:rgba(75,95,232,0.34)"></u><u style="background:rgba(75,95,232,0.28)"></u><u style="background:rgba(75,95,232,0.26)"></u><u style="background:rgba(75,95,232,0.32)"></u><u style="background:rgba(75,95,232,0.34)"></u><u style="background:rgba(75,95,232,0.46)"></u><u style="background:rgba(75,95,232,0.56)"></u><u style="background:rgba(75,95,232,0.72)"></u><u style="background:rgba(75,95,232,0.82)"></u><b style="justify-content:flex-start;color:#54607A">스팀다리미</b><u style="background:rgba(75,95,232,0.44)"></u><u style="background:rgba(75,95,232,0.50)"></u><u style="background:rgba(75,95,232,0.62)"></u><u style="background:rgba(75,95,232,0.56)"></u><u style="background:rgba(75,95,232,0.46)"></u><u style="background:rgba(75,95,232,0.40)"></u><u style="background:rgba(75,95,232,0.40)"></u><u style="background:rgba(75,95,232,0.46)"></u><u style="background:rgba(75,95,232,0.56)"></u><u style="background:rgba(75,95,232,0.62)"></u><u style="background:rgba(75,95,232,0.50)"></u><u style="background:rgba(75,95,232,0.44)"></u></div></div>
+              <div class="mnote">시즌 커브가 겹치는 카테고리는 <b>같은 달에 광고비가 몰립니다.</b> 성수기 진입 두 달 전에 재고와 예산을 미리 나누려고 만든 화면입니다.</div>
+            </div>
+            <div class="mblock">
+              <div class="mh">거래처 매출 순위<span>상위 5 · 명칭 비공개</span></div>
+              <div class="mtblw"><table class="mtbl">
+                <thead><tr><th>거래처</th><th>매출 비중</th><th>주력 카테고리</th><th>집중도</th></tr></thead>
+                <tbody>
+                  <tr><td><span class="mask">거래처명</span> A</td><td>—</td><td>주방가전</td><td><span class="msig warn">편중</span></td></tr>
+                  <tr><td><span class="mask">거래처명</span> B</td><td>—</td><td>계절가전</td><td><span class="msig ok">분산</span></td></tr>
+                  <tr><td><span class="mask">거래처명</span> C</td><td>—</td><td>생활가전</td><td><span class="msig ok">분산</span></td></tr>
+                  <tr><td><span class="mask">거래처명</span> D</td><td>—</td><td>주방가전</td><td><span class="msig mut">—</span></td></tr>
+                  <tr><td><span class="mask">거래처명</span> E</td><td>—</td><td>계절가전</td><td><span class="msig mut">—</span></td></tr>
+                </tbody></table></div>
+            </div>
+          </div>
+        </div>
+        <p class="cap">거래처명 · 품번 · 매출 수치는 모두 가렸습니다. 시즌 지수는 형태를 보여주기 위한 샘플 값입니다.</p>
+      </div>
+
+      <div class="card accent">
+        <div class="no mono">TOOL 03 · 매주</div>
+        <h3>주간성과 생성기</h3>
+        <p style="margin:0">광고 RAW와 판매 데이터 두 파일을 올리면 주간 보고서가 그대로 나옵니다. 매주 손으로 집계하던 9개 표를 자동화하면서, 판단 기준까지 규칙으로 심어 두었습니다.</p>
+        <div class="tkwin">
+          <div class="tkbar"><b>○○ 주간성과 생성기</b><span class="msub">RAW 2개 → 9개 섹션 자동 생성</span>
+            <span class="mtabs"><i class="on">보고용 목~수</i><i>검토용 월~일</i></span></div>
+          <div class="tkbody">
+            <div class="mdrop">
+              <div class="d1">광고시트 · 판매데이터 두 파일을 여기에 드롭</div>
+              <div class="d2">순서 상관없이 시트 이름으로 자동 인식합니다</div>
+              <span class="dpill">광고 RAW ✓</span><span class="dpill">판매데이터 ✓</span>
+            </div>
+            <div class="mnote warn" style="margin-top:12px">⚠️ <b>축소 구간</b> — 광고비가 줄어든 주간입니다. ROAS · 전환율 상승은 <b>축소 착시</b>이므로 판정은 전환수 · 순매출 <b>절대값</b>으로 합니다.</div>
+            <div class="mblock">
+              <div class="mh">쇼핑검색 광고그룹 입찰 권고<span>최근 4주 누적 · 그룹 단위</span></div>
+              <div class="mtblw"><table class="mtbl">
+                <thead><tr><th>광고그룹</th><th>비중</th><th>CVR</th><th>ROAS</th><th>권고</th></tr></thead>
+                <tbody>
+                  <tr><td><span class="mask">그룹명</span> · 일반</td><td>—</td><td>—</td><td>—</td><td><span class="msig ok">상향</span></td></tr>
+                  <tr><td><span class="mask">그룹명</span> · 브랜드</td><td>—</td><td>—</td><td>—</td><td><span class="msig mut">유지</span></td></tr>
+                  <tr><td><span class="mask">그룹명</span> · 시즌종료</td><td>—</td><td>—</td><td>—</td><td><span class="msig bad">하향 · 중단</span></td></tr>
+                  <tr><td><span class="mask">그룹명</span> · 일반</td><td>—</td><td>—</td><td>—</td><td><span class="msig warn">점검</span></td></tr>
+                </tbody></table></div>
+              <div class="mnote">권고는 규칙으로 고정했습니다. 일반 그룹 ROAS≥250%·CVR≥2% → 상향, ROAS&lt;130% → 하향. <b>브랜드 그룹은 오가닉으로도 들어와 증분이 낮으므로 상향에서 제외</b>합니다. 회수한 예산은 상향 그룹으로 옮깁니다.</div>
+            </div>
+          </div>
+        </div>
+        <p class="cap">그룹명과 수치는 모두 가렸습니다. 권고 배지는 실제 판정 규칙을 그대로 옮긴 것입니다.</p>
+      </div>
+    </div>
+
+    <div class="band">
+      <h3>도구마다 "이 화면이 답하지 않는 것"을 같이 적습니다</h3>
+      <p>세 도구 모두 마지막에 한계를 적어둡니다. 신호판은 원인을 말하지 않고, 판매채널 대시보드는 광고 기여를 모르고, 주간 생성기는 META·GDN을 전환 판정에서 뺍니다. 어디까지 답할 수 있는 화면인지 적어두지 않으면, 다음 사람이 그 숫자를 과신하게 됩니다.</p>
     </div>
   </div>
 </section>
@@ -988,7 +1193,7 @@ section.blue .blbl{color:rgba(255,255,255,.6)}
   var deck = null, key = '', idx = 1, lastFocus = null;
 
   function pad(n) { return (n < 10 ? '0' : '') + n; }
-  function src(i) { return deck.p + pad(i) + '.jpg'; }
+  function src(i) { return deck.list ? deck.list[i - 1] : deck.p + pad(i) + '.jpg'; }
 
   function preload(i) { if (i >= 1 && i <= deck.n) { new Image().src = src(i); } }
 
@@ -997,7 +1202,7 @@ section.blue .blbl{color:rgba(255,255,255,.6)}
     img.alt = deck.t + ' 카드뉴스 ' + idx + '번째 장';
     elT.textContent = deck.t;
     elM.textContent = deck.m;
-    elC.textContent = idx + ' / ' + deck.n;
+    elC.textContent = deck.n > 1 ? (idx + ' / ' + deck.n) : '';
     btnP.disabled = idx === 1;
     btnN.disabled = idx === deck.n;
     var dots = elD.children;
@@ -1005,11 +1210,13 @@ section.blue .blbl{color:rgba(255,255,255,.6)}
     preload(idx + 1); preload(idx - 1);
   }
 
-  function open(k, i) {
-    key = k; deck = DECKS[k]; if (!deck) return;
+  function openDeck(d, i) {
+    deck = d; if (!deck) return;
     idx = Math.min(Math.max(i || 1, 1), deck.n);
+    lb.classList.toggle('wide', !!deck.wide);
+    img.classList.toggle('wide', !!deck.wide);
     elD.innerHTML = '';
-    for (var j = 0; j < deck.n; j++) { elD.appendChild(document.createElement('i')); }
+    if (deck.n > 1) { for (var j = 0; j < deck.n; j++) { elD.appendChild(document.createElement('i')); } }
     lastFocus = document.activeElement;
     lb.classList.add('on');
     document.body.style.overflow = 'hidden';
@@ -1032,7 +1239,17 @@ section.blue .blbl{color:rgba(255,255,255,.6)}
 
   Array.prototype.forEach.call(document.querySelectorAll('.ftile'), function (t) {
     t.addEventListener('click', function () {
-      open(t.getAttribute('data-deck'), parseInt(t.getAttribute('data-i'), 10));
+      openDeck(DECKS[t.getAttribute('data-deck')], parseInt(t.getAttribute('data-i'), 10));
+    });
+  });
+
+  // 단일 이미지(소재 시트) — 넘길 장이 없으므로 1장짜리 덱으로 연다
+  Array.prototype.forEach.call(document.querySelectorAll('.shot'), function (b) {
+    b.addEventListener('click', function () {
+      openDeck({
+        t: b.getAttribute('data-t'), m: b.getAttribute('data-m'),
+        n: 1, wide: true, list: [b.getAttribute('data-src')]
+      }, 1);
     });
   });
 
