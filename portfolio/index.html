@@ -256,6 +256,50 @@ section.blue .blbl{color:rgba(255,255,255,.6)}
 .gbody li{font-size:13px;color:var(--ink-2);margin-bottom:8px;padding-left:14px;position:relative;line-height:1.6}
 .gbody li:before{content:"";position:absolute;left:0;top:9px;width:5px;height:5px;border-radius:50%;background:var(--royal)}
 @media (max-width:900px){.gal{grid-template-columns:1fr}.gimgwrap{height:260px}}
+/* ── card news feed ── */
+.feed{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0 0 20px}
+.ftile{position:relative;display:block;width:100%;aspect-ratio:4/5;padding:0;border:0;margin:0;
+  background:var(--bg);border-radius:14px;overflow:hidden;cursor:pointer;font:inherit;color:inherit}
+.ftile img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.2,.7,.3,1)}
+.ftile:hover img{transform:scale(1.045)}
+.ftile:focus-visible{outline:3px solid var(--royal);outline-offset:3px}
+.ftile .fcount{position:absolute;top:10px;right:10px;display:flex;align-items:center;gap:5px;
+  background:rgba(10,12,28,.58);color:#fff;font-size:10.5px;font-weight:600;letter-spacing:.06em;
+  padding:5px 10px;border-radius:100px;pointer-events:none}
+.ftile .fmeta{position:absolute;left:0;right:0;bottom:0;padding:40px 14px 13px;text-align:left;color:#fff;
+  font-size:11.5px;line-height:1.5;opacity:0;transition:opacity .25s;pointer-events:none;
+  background:linear-gradient(to top,rgba(8,10,24,.88),rgba(8,10,24,0))}
+.ftile:hover .fmeta,.ftile:focus-visible .fmeta{opacity:1}
+@media (hover:none){.ftile .fmeta{opacity:1}}
+@media (max-width:560px){.feed{gap:6px}.ftile{border-radius:10px}.ftile .fmeta{font-size:10.5px;padding:30px 10px 10px}}
+
+/* ── lightbox ── */
+.lb{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;
+  background:rgba(8,10,24,.93);padding:20px}
+.lb.on{display:flex}
+.lbin{position:relative;width:100%;max-width:min(88vw,480px);display:flex;flex-direction:column;gap:14px}
+.lbimg{width:100%;aspect-ratio:4/5;object-fit:contain;display:block;border-radius:14px;background:#0a0c1a}
+.lbbar{display:flex;align-items:baseline;justify-content:space-between;gap:16px;color:rgba(255,255,255,.6);font-size:12.5px}
+.lbbar strong{display:block;color:#fff;font-size:14.5px;font-weight:600;margin-bottom:3px;letter-spacing:-.01em}
+.lbnav,.lbx{position:absolute;border:1px solid rgba(255,255,255,.26);background:rgba(12,14,32,.6);
+  color:#fff;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;
+  width:44px;height:44px;font-size:17px;line-height:1;padding:0;transition:background .2s,border-color .2s}
+.lbnav:hover,.lbx:hover{background:rgba(75,95,232,.9);border-color:transparent}
+.lbnav:disabled{opacity:.28;cursor:default}
+.lbnav:disabled:hover{background:rgba(12,14,32,.6);border-color:rgba(255,255,255,.26)}
+.lbprev{left:-60px;top:calc(50% - 40px)}
+.lbnext{right:-60px;top:calc(50% - 40px)}
+.lbx{top:-56px;right:0;width:40px;height:40px;font-size:15px}
+.lbdots{display:flex;gap:5px;justify-content:center;flex-wrap:wrap}
+.lbdots i{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.28);transition:background .2s,width .2s}
+.lbdots i.on{background:#fff;width:18px;border-radius:100px}
+@media (max-width:900px){
+  .lbin{max-width:min(92vw,420px)}
+  .lbprev{left:6px;top:auto;bottom:-56px}
+  .lbnext{right:6px;top:auto;bottom:-56px}
+  .lb{padding:20px 20px 88px}
+}
+
 
 /* ── sheet mock ── */
 .sheet{background:#fff;border:1px solid #D8DCE8;border-radius:10px;overflow:hidden;margin-top:20px;font-size:11px;line-height:1.5}
@@ -447,7 +491,7 @@ section.blue .blbl{color:rgba(255,255,255,.6)}
       <div class="item">
         <div class="when mono">2022.01 — 2024.01</div>
         <div class="who">엠플랜잇</div>
-        <div class="role">신사업부 · 대리 팀장</div>
+        <div class="role">신사업부 · 커머스 리드</div>
         <ul>
           <li>건기식 신제품 8종 PM · 리브랜딩 총괄</li>
           <li>Python 기반 물류 반자동화 · RFM 분석</li>
@@ -767,6 +811,73 @@ section.blue .blbl{color:rgba(255,255,255,.6)}
   </div>
 </section>
 
+<!-- ========== CARD NEWS ========== -->
+<section class="dark">
+  <div class="page">
+    <div class="tag mono">CONTENT PRODUCTION</div>
+    <h2>카드뉴스는 혼자, 더 빠르게 만듭니다</h2>
+    <p class="lead">Claude로 제작 흐름을 반자동화했습니다. 완전 자동화는 아닙니다. 다만 매번 처음부터 잡던 구성 틀과 소재, 이미지 작업을 도구로 묶어두니 기획에서 시안까지 걸리던 시간이 크게 줄었고, 디자이너 없이 혼자 끝낼 수 있게 됐습니다.</p>
+
+    <div class="feed">
+      <button class="ftile" type="button" data-deck="humid" data-i="1">
+        <img src="img/cardnews/humid-01.jpg" alt="보만 가습기 카드뉴스 표지 — 날씨 추워지기 전에 가습기부터 정해야 합니다" loading="lazy" width="1080" height="1350">
+        <span class="fcount">10장</span>
+        <span class="fmeta">보만 복합식 가습기 6L · 표지</span>
+      </button>
+      <button class="ftile" type="button" data-deck="humid" data-i="4">
+        <img src="img/cardnews/humid-04.jpg" alt="보만 가습기 카드뉴스 — 끓이지 않고 데워서 내보냅니다" loading="lazy" width="1080" height="1350">
+        <span class="fcount">10장</span>
+        <span class="fmeta">가습의 온도로 소구점을 좁힌 장</span>
+      </button>
+      <button class="ftile" type="button" data-deck="humid" data-i="10">
+        <img src="img/cardnews/humid-10.jpg" alt="보만 가습기 카드뉴스 — 제품 가격 안내" loading="lazy" width="1080" height="1350">
+        <span class="fcount">10장</span>
+        <span class="fmeta">혜택가로 닫는 마지막 장</span>
+      </button>
+      <button class="ftile" type="button" data-deck="toast" data-i="1">
+        <img src="img/cardnews/toast-01.jpg" alt="보만 토스터기 카드뉴스 표지 — 토스터기에 10만 원을 쓰고 계신가요" loading="lazy" width="1080" height="1350">
+        <span class="fcount">9장</span>
+        <span class="fmeta">보만 7단 조절 2구 토스터기 · 표지</span>
+      </button>
+      <button class="ftile" type="button" data-deck="toast" data-i="3">
+        <img src="img/cardnews/toast-03.jpg" alt="보만 토스터기 카드뉴스 — 리뷰 487개 평균 4.8점" loading="lazy" width="1080" height="1350">
+        <span class="fcount">9장</span>
+        <span class="fmeta">리뷰 487개를 읽고 기준을 뽑은 장</span>
+      </button>
+      <button class="ftile" type="button" data-deck="toast" data-i="8">
+        <img src="img/cardnews/toast-08.jpg" alt="보만 토스터기 카드뉴스 — 토스터기 고르는 기준 4가지 정리" loading="lazy" width="1080" height="1350">
+        <span class="fcount">9장</span>
+        <span class="fmeta">저장을 유도하는 정리 장</span>
+      </button>
+    </div>
+    <p class="note" style="margin-top:0">썸네일을 누르면 전체 카드를 넘겨볼 수 있습니다. · 보만코리아 인스타그램 캐러셀 2편 · 총 19장 · 기획 · 카피 · 디자인 1인 제작</p>
+
+    <div class="pipe" style="margin-top:52px">
+      <div class="step">
+        <div class="st mono">01 · 기준을 먼저 고정</div>
+        <div class="sd">제품별로 매번 새로 잡지 않도록 구성 틀을 먼저 정했습니다. 표지 · 문제 제기 · 판단 기준 · 정리 · 혜택으로 이어지는 순서와, 색·타이포·푸터 규칙을 디자인 시스템으로 묶어 두었습니다.</div>
+      </div>
+      <div class="step">
+        <div class="st mono">02 · 소재는 실제 데이터에서</div>
+        <div class="sd">카피를 지어내지 않고 리뷰와 상세페이지에서 뽑았습니다. 토스터기 편은 누적 리뷰 487개를 읽고 가장 많이 나온 단어부터 기준 4개로 정리했습니다.</div>
+      </div>
+      <div class="step">
+        <div class="st mono">03 · 조판은 도구로</div>
+        <div class="sd">확정된 틀에 내용만 갈아 끼우면 1080×1350 카드가 한 번에 나오도록 만들어 두었습니다. 매번 새로 조판하던 구간이 사라졌습니다.</div>
+      </div>
+      <div class="step">
+        <div class="st mono">04 · 판단은 사람이</div>
+        <div class="sd">어떤 소구점을 앞에 둘지, 어느 장을 뺄지는 매번 직접 정합니다. 줄인 것은 손이 가던 시간이지 판단 과정이 아닙니다.</div>
+      </div>
+    </div>
+
+    <div class="band">
+      <h3>제작 시간을 줄인 만큼 편수를 늘렸습니다</h3>
+      <p>카드뉴스는 한 편 잘 만드는 것보다 꾸준히 올리는 쪽이 성과로 이어집니다. 틀과 조판을 도구로 묶어둔 이유가 여기에 있습니다. 같은 시간에 더 많은 제품을 다룰 수 있게 되면서, 소재를 정하고 반응을 확인하는 데 시간을 더 쓰고 있습니다.</p>
+    </div>
+  </div>
+</section>
+
 <!-- ========== CASE 05 ========== -->
 <section>
   <div class="page">
@@ -844,6 +955,109 @@ section.blue .blbl{color:rgba(255,255,255,.6)}
     </div>
   </div>
 </footer>
+
+<!-- ========== 카드뉴스 라이트박스 ========== -->
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="카드뉴스 크게 보기">
+  <div class="lbin">
+    <button class="lbx" type="button" id="lbx" aria-label="닫기">✕</button>
+    <img class="lbimg" id="lbimg" alt="">
+    <div class="lbbar">
+      <span><strong id="lbt"></strong><span id="lbm"></span></span>
+      <span class="mono" id="lbc"></span>
+    </div>
+    <div class="lbdots" id="lbd"></div>
+    <button class="lbnav lbprev" type="button" id="lbp" aria-label="이전 장">‹</button>
+    <button class="lbnav lbnext" type="button" id="lbn" aria-label="다음 장">›</button>
+  </div>
+</div>
+
+<script>
+(function () {
+  var DECKS = {
+    humid: { t: '보만 복합식 대용량 가습기 6L', m: '인스타그램 캐러셀 · 10장', p: 'img/cardnews/humid-', n: 10 },
+    toast: { t: '보만 7단 조절 2구 토스터기', m: '인스타그램 캐러셀 · 9장', p: 'img/cardnews/toast-', n: 9 }
+  };
+  var lb = document.getElementById('lb');
+  if (!lb) return;
+  var img = document.getElementById('lbimg'),
+      elT = document.getElementById('lbt'), elM = document.getElementById('lbm'),
+      elC = document.getElementById('lbc'), elD = document.getElementById('lbd'),
+      btnP = document.getElementById('lbp'), btnN = document.getElementById('lbn'),
+      btnX = document.getElementById('lbx');
+  var deck = null, key = '', idx = 1, lastFocus = null;
+
+  function pad(n) { return (n < 10 ? '0' : '') + n; }
+  function src(i) { return deck.p + pad(i) + '.jpg'; }
+
+  function preload(i) { if (i >= 1 && i <= deck.n) { new Image().src = src(i); } }
+
+  function render() {
+    img.src = src(idx);
+    img.alt = deck.t + ' 카드뉴스 ' + idx + '번째 장';
+    elT.textContent = deck.t;
+    elM.textContent = deck.m;
+    elC.textContent = idx + ' / ' + deck.n;
+    btnP.disabled = idx === 1;
+    btnN.disabled = idx === deck.n;
+    var dots = elD.children;
+    for (var i = 0; i < dots.length; i++) { dots[i].className = (i + 1 === idx) ? 'on' : ''; }
+    preload(idx + 1); preload(idx - 1);
+  }
+
+  function open(k, i) {
+    key = k; deck = DECKS[k]; if (!deck) return;
+    idx = Math.min(Math.max(i || 1, 1), deck.n);
+    elD.innerHTML = '';
+    for (var j = 0; j < deck.n; j++) { elD.appendChild(document.createElement('i')); }
+    lastFocus = document.activeElement;
+    lb.classList.add('on');
+    document.body.style.overflow = 'hidden';
+    render();
+    btnX.focus();
+  }
+
+  function close() {
+    lb.classList.remove('on');
+    document.body.style.overflow = '';
+    img.removeAttribute('src');
+    if (lastFocus && lastFocus.focus) { lastFocus.focus(); }
+  }
+
+  function go(d) {
+    var next = idx + d;
+    if (next < 1 || next > deck.n) return;
+    idx = next; render();
+  }
+
+  Array.prototype.forEach.call(document.querySelectorAll('.ftile'), function (t) {
+    t.addEventListener('click', function () {
+      open(t.getAttribute('data-deck'), parseInt(t.getAttribute('data-i'), 10));
+    });
+  });
+
+  btnP.addEventListener('click', function () { go(-1); });
+  btnN.addEventListener('click', function () { go(1); });
+  btnX.addEventListener('click', close);
+  lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
+
+  document.addEventListener('keydown', function (e) {
+    if (!lb.classList.contains('on')) return;
+    if (e.key === 'Escape') { close(); }
+    else if (e.key === 'ArrowLeft') { go(-1); }
+    else if (e.key === 'ArrowRight') { go(1); }
+  });
+
+  // 모바일 스와이프
+  var x0 = null;
+  lb.addEventListener('touchstart', function (e) { x0 = e.changedTouches[0].clientX; }, { passive: true });
+  lb.addEventListener('touchend', function (e) {
+    if (x0 === null) return;
+    var dx = e.changedTouches[0].clientX - x0;
+    if (Math.abs(dx) > 45) { go(dx < 0 ? 1 : -1); }
+    x0 = null;
+  }, { passive: true });
+})();
+</script>
 
 </body>
 </html>
