@@ -13,7 +13,7 @@
 ├── portfolio/
 │   ├── index.html         # 포트폴리오 본문 (CSS·JS 인라인)
 │   ├── img/cardnews/      # 카드뉴스 19장 (가습기 10 · 토스터기 9)
-│   ├── img/creative/      # 운영 배너 소재 시트 2장
+│   ├── img/creative/      # 운영 배너 소재 13종 (bn-01~13)
 │   └── robots.txt         # 검색엔진 수집 차단
 ├── vercel.json      # 배포 설정 (outputDirectory: portfolio)
 └── README.md
