@@ -396,7 +396,32 @@ section.blue .blbl{color:rgba(255,255,255,.6)}
 }
 
 
-/* ── 담당 범위 한 단락 ── */
+
+/* 9구간 — 한 칸씩 색이 넘어간다 */
+.pstep{background:var(--paper);background:color-mix(in srgb, hsl(var(--h) 72% 58%) 12%, var(--paper));
+  border:1px solid var(--line);border-color:color-mix(in srgb, hsl(var(--h) 72% 58%) 34%, var(--line));
+  border-top:3px solid hsl(var(--h) 72% 58%);
+  border-radius:14px;padding:20px 14px 18px;text-align:center}
+.pstep .pn{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.14em;
+  color:hsl(var(--h) 62% 48%);margin-bottom:10px;font-weight:600}
+.pstep .pt{font-size:15px;font-weight:650;letter-spacing:-.01em;margin-bottom:8px;color:var(--ink)}
+.pstep .pd{font-size:11.5px;color:var(--ink-2);line-height:1.55}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) .pstep .pn{color:hsl(var(--h) 78% 72%)}
+}
+:root[data-theme="dark"] .pstep .pn{color:hsl(var(--h) 78% 72%)}
+.pmapnote{max-width:62ch;margin-left:auto;margin-right:auto}
+
+/* 9구간 블록과 아래를 확실히 띄운다 */
+.pmap{margin:0 0 22px}
+.pmapnote{margin-bottom:104px}
+
+/* 강점 3가지 */
+.strengths{max-width:860px;margin:0 auto 24px;text-align:left}
+.strengths h3{font-size:22px;margin:0 0 9px;letter-spacing:-.02em}
+.strengths p{margin:0;font-size:14.5px;color:var(--ink-2);line-height:1.8}
+
+/* ── (미사용) 담당 범위 한 단락 ── */
 .scope{max-width:860px;margin:0 auto 46px;text-align:left}
 .scopeline{margin:0 0 20px;display:flex;flex-wrap:wrap;gap:8px}
 .scopeline b{font-size:14px;font-weight:650;color:var(--royal);background:var(--tint);
@@ -481,19 +506,56 @@ section.blue .zlab>span,section.dark .zlab>span{color:rgba(255,255,255,.5)}
     <h2>이커머스의 전 구간을 직접 돌려봤습니다</h2>
     <p class="lead">아래 9개 구간을 모두 실무로 경험했습니다.</p>
 
-    <div class="scope">
-      <p class="scopeline"><b>제품 기획</b><b>발주 · 재고</b><b>물류</b><b>CS</b><b>채널 판매</b><b>프로모션</b><b>CRM</b><b>광고</b><b>데이터 · 자동화</b></p>
-      <p class="scopetext">신제품 8종 PM과 라인업 설계, 3개월 선행 재고·발주 예측, 배대지 전환과 배송 프로세스 개선,
-      클레임 원인 분석과 응대 기준 수립, 12채널 판가·수수료·마진 관리, 공동구매·시즌 로테이션·딜 운영,
-      재구매 주기 기반 CRM 메시지 설계, SA·GFA·META·카카오 직접 운영, 대시보드와 변환 도구 제작까지.
-      <b>대행사나 타 부서에 맡긴 구간 없이 모두 담당했거나 직접 설계했습니다.</b></p>
-    </div>
-    <div class="metrics">
-      <div class="metric">
-        <div class="lbl">담당 프로세스</div>
-        <div class="val">9개 구간</div>
-        <div class="sub">제품 기획 ~ 데이터 · 자동화</div>
+    <div class="pmap">
+      <div class="pstep" style="--h:215">
+        <div class="pn">01</div>
+        <div class="pt">제품 기획</div>
+        <div class="pd">신제품 8종 PM · 라인업 설계</div>
       </div>
+      <div class="pstep" style="--h:222">
+        <div class="pn">02</div>
+        <div class="pt">발주 · 재고</div>
+        <div class="pd">3개월 선행 재고 · 발주 예측</div>
+      </div>
+      <div class="pstep" style="--h:229">
+        <div class="pn">03</div>
+        <div class="pt">물류</div>
+        <div class="pd">배대지 전환 · 배송 프로세스 개선</div>
+      </div>
+      <div class="pstep" style="--h:236">
+        <div class="pn">04</div>
+        <div class="pt">CS</div>
+        <div class="pd">클레임 원인 분석 · 응대 기준</div>
+      </div>
+      <div class="pstep" style="--h:244">
+        <div class="pn">05</div>
+        <div class="pt">채널 판매</div>
+        <div class="pd">12채널 판가 · 수수료 · 마진</div>
+      </div>
+      <div class="pstep" style="--h:251">
+        <div class="pn">06</div>
+        <div class="pt">프로모션</div>
+        <div class="pd">공동구매 · 시즌 로테이션 · 딜</div>
+      </div>
+      <div class="pstep" style="--h:258">
+        <div class="pn">07</div>
+        <div class="pt">CRM</div>
+        <div class="pd">재구매 주기 기반 메시지 설계</div>
+      </div>
+      <div class="pstep" style="--h:265">
+        <div class="pn">08</div>
+        <div class="pt">광고</div>
+        <div class="pd">SA · GFA · META · 카카오 직접 운영</div>
+      </div>
+      <div class="pstep" style="--h:272">
+        <div class="pn">09</div>
+        <div class="pt">데이터 · 자동화</div>
+        <div class="pd">대시보드 · 변환 도구 제작</div>
+      </div>
+    </div>
+    <p class="note pmapnote">광고 대행사 · 개발자 · 물류 담당자와 함께 진행한 구간이 많습니다.
+    다만 무엇을 기준으로 판단할지 정하고 방향을 잡는 일은 어느 구간에서든 직접 했습니다.</p>
+    <div class="metrics">
       <div class="metric">
         <div class="lbl">운영 채널</div>
         <div class="val">12채널+</div>
@@ -511,6 +573,10 @@ section.blue .zlab>span,section.dark .zlab>span{color:rgba(255,255,255,.5)}
       </div>
     </div>
 
+    <div class="strengths">
+      <h3>이 경험이 강점 세 가지로 남았습니다</h3>
+      <p>구간을 다 겪어봤기 때문에, 문제가 생겼을 때 어디부터 봐야 할지가 잡힙니다.</p>
+    </div>
     <div class="grid3">
       <div class="card accent">
         <div class="no mono">01 · 체계화</div>
@@ -551,11 +617,11 @@ section.blue .zlab>span,section.dark .zlab>span{color:rgba(255,255,255,.5)}
 <section>
   <div class="page">
     <div class="tag mono">CREATIVE</div>
-    <h2>소재는 기획부터 제작까지 직접 합니다</h2>
-    <p class="lead">무엇을 앞에 둘지 정하는 일과 실제로 만들어 내보내는 일을 나눠 맡기지 않았습니다.</p>
+    <h2>소재는 대행사와 함께 만듭니다</h2>
+    <p class="lead">제품 선정과 소구점, 카피 방향을 정해 브리프로 넘기고 제작은 대행사와 함께 진행합니다.</p>
 
     <div class="cblock">
-      <div class="ch"><h3>카드뉴스</h3><p>Claude로 구성 틀과 소재, 조판을 묶어두고 디자이너 없이 혼자 만듭니다. 완전 자동화는 아니지만 기획에서 시안까지 걸리던 시간이 크게 줄었습니다.</p></div>
+      <div class="ch"><h3>카드뉴스</h3><p>제품을 고르는 기준을 순서대로 짚어주는 구성으로 만든 인스타그램 캐러셀입니다. 리뷰와 상세페이지에서 소재를 뽑아 표지 · 판단 기준 · 정리 · 혜택 순으로 배치했습니다.</p></div>
       <div class="feed">
         <button class="ftile" type="button" data-deck="humid" data-i="1">
           <img src="img/cardnews/humid-01.jpg" alt="보만 가습기 카드뉴스 1번째 장" loading="lazy" width="1080" height="1350">
@@ -590,11 +656,11 @@ section.blue .zlab>span,section.dark .zlab>span{color:rgba(255,255,255,.5)}
           <span class="fcount">9장</span><span class="fmeta">한정 특가로 닫는 마지막 장</span>
         </button>
       </div>
-      <p class="cap">보만코리아 인스타그램 캐러셀 2편 · 총 19장 · 기획 · 카피 · 디자인 1인 제작. 누르면 덱 전체를 넘겨볼 수 있습니다.</p>
+      <p class="cap">보만코리아 인스타그램 캐러셀 2편 · 총 19장. 누르면 덱 전체를 넘겨볼 수 있습니다.</p>
     </div>
 
     <div class="cblock">
-      <div class="ch"><h3>운영 배너</h3><p>제품 선정 · 소구점 · 카피 · 혜택 구조를 직접 정해 운영한 소재입니다. 같은 제품이라도 시즌과 채널에 따라 앞에 두는 것을 바꿉니다.</p></div>
+      <div class="ch"><h3>운영 배너</h3><p>제품 선정 · 소구점 · 카피 · 혜택 구조를 정해 운영한 소재입니다. 같은 제품이라도 시즌과 채널에 따라 앞에 두는 것을 바꿉니다.</p></div>
       <div class="bngrid">
         <button class="shot bn" type="button" data-src="img/creative/bn-01.jpg" data-t="운영 배너 소재 1" data-m="교복 정장도 걸어둔 채로 25초 — 핸디 스팀다리미">
           <img src="img/creative/bn-01.jpg" alt="교복 정장도 걸어둔 채로 25초 — 핸디 스팀다리미" loading="lazy">
@@ -690,6 +756,7 @@ section.blue .zlab>span,section.dark .zlab>span{color:rgba(255,255,255,.5)}
       <h3>소재는 만들고 끝내지 않았습니다</h3>
       <p>제품 USP를 기능형·라이프스타일형·혜택형으로 분해해 방향을 나누고, 반복되는 표현 패턴은 모듈 템플릿으로 정리했습니다. 소재ID와 태깅 규칙을 붙여 채널을 가로질러 같은 소재를 추적할 수 있게 했습니다.</p>
     </div>
+    <p class="note">카드뉴스부터는 최근 Claude를 연계해 제작 흐름을 자동화해 보고 있습니다.</p>
   </div>
 </section>
 
