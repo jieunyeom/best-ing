@@ -197,6 +197,11 @@ section.blue .band,section.dark .band{background:rgba(255,255,255,.1);border:1px
 .close{background:var(--navy);color:#fff;padding:150px 0;text-align:center}
 .close h2{color:#fff;max-width:24ch;font-size:clamp(30px,4.8vw,52px)}
 .close p{color:rgba(255,255,255,.75);max-width:52ch;font-size:15.5px;margin:26px auto 0;line-height:1.8}
+.fstack{margin-top:26px;text-align:left}
+.close .fstack p{margin:0 0 5px;max-width:none;font-size:12px;line-height:1.8;color:rgba(255,255,255,.62)}
+.close .fstack b{display:inline-block;min-width:40px;margin-right:10px;font-weight:600;color:rgba(255,255,255,.82)}
+.close .fstack .fmeta{margin-top:14px;padding-top:13px;border-top:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.52)}
+@media (max-width:560px){.close .fstack b{display:block;margin-bottom:2px}}
 
 @media (max-width:900px){
   section{padding:80px 0}
@@ -1188,34 +1193,6 @@ section.blue .zlab>span,section.dark .zlab>span{color:rgba(255,255,255,.5)}
   </div>
 </section>
 
-<!-- ========== 스킬 ========== -->
-<section>
-  <div class="page">
-    <div class="tag mono">CHANNELS &amp; STACK</div>
-    <h2>다뤄 온 채널과 도구</h2>
-    <div class="grid2" style="margin-top:28px">
-      <div class="card">
-        <h3>판매 채널 · 매체</h3>
-        <div style="margin-top:14px">
-          <span class="chip">자사몰(Cafe24)</span><span class="chip">네이버 스마트스토어</span><span class="chip">쿠팡</span>
-          <span class="chip">버티컬 플랫폼</span><span class="chip">홈쇼핑 계열</span><span class="chip">공동구매 플랫폼</span>
-          <span class="chip on">네이버 SA</span><span class="chip on">GFA</span><span class="chip on">META</span><span class="chip on">카카오모먼트</span><span class="chip">구글애즈</span>
-        </div>
-      </div>
-      <div class="card">
-        <h3>데이터 · 도구</h3>
-        <div style="margin-top:14px">
-          <span class="chip on">Claude</span><span class="chip">Gemini</span><span class="chip">Genspark</span>
-          <span class="chip on">Python</span><span class="chip on">Streamlit</span><span class="chip on">HTML/JS</span>
-          <span class="chip">SPSS · R</span><span class="chip">GA4 · GTM</span><span class="chip">Looker Studio</span>
-          <span class="chip">이카운트 ERP</span><span class="chip">사방넷</span><span class="chip">Google Sheets</span>
-        </div>
-      </div>
-    </div>
-    <p class="note">자격 · 사회조사분석사 2급 &nbsp;|&nbsp; 학력 · 안양대학교 행정학과 (2013.03–2018.02) &nbsp;|&nbsp; 이커머스·마케팅 블로그 운영 (2017–현재)</p>
-  </div>
-</section>
-
 <!-- ========== CLOSING ========== -->
 <footer class="close">
   <div class="page">
@@ -1226,6 +1203,13 @@ section.blue .zlab>span,section.dark .zlab>span{color:rgba(255,255,255,.5)}
       <span><strong style="color:#fff;font-size:17px;font-weight:600">염지은</strong></span>
       <a class="mono clink" href="mailto:yjieun15@naver.com">yjieun15@naver.com</a>
       <a class="mono clink" href="https://blog.naver.com/yjieun15" target="_blank" rel="noopener">blog.naver.com/yjieun15</a>
+    </div>
+
+    <div class="fstack">
+      <p><b>채널</b>자사몰(Cafe24) · 네이버 스마트스토어 · 쿠팡 · 버티컬 플랫폼 · 홈쇼핑 계열 · 공동구매 플랫폼</p>
+      <p><b>매체</b>네이버 SA · GFA · META · 카카오모먼트 · 구글애즈</p>
+      <p><b>도구</b>Claude · Gemini · Genspark · Python · Streamlit · HTML/JS · SPSS · R · GA4 · GTM · Looker Studio · 이카운트 ERP · 사방넷 · Google Sheets</p>
+      <p class="fmeta">사회조사분석사 2급 &nbsp;·&nbsp; 안양대학교 행정학과 2013.03–2018.02 &nbsp;·&nbsp; 이커머스 · 마케팅 블로그 운영 2017–현재</p>
     </div>
   </div>
 </footer>
