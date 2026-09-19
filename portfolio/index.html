@@ -93,6 +93,9 @@ h3{font-size:21px;font-weight:600;margin:0 0 14px;letter-spacing:-.02em;line-hei
 
 /* ── metrics ── */
 .metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:0 0 60px}
+.metrics.c3{grid-template-columns:repeat(3,1fr)}
+@media (max-width:900px){.metrics.c3{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.metrics.c3{grid-template-columns:1fr}}
 .metric{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:36px 24px}
 .metric .lbl{font-size:11px;letter-spacing:.1em;color:var(--ink-3);margin-bottom:18px;text-transform:uppercase}
 .metric .val{font-size:40px;font-weight:700;letter-spacing:-.04em;line-height:1;color:var(--royal)}
@@ -225,6 +228,13 @@ section.blue .fig .ft,section.dark .fig .ft{color:rgba(255,255,255,.6)}
 .fig svg{width:100%;height:auto;display:block}
 .cap{font-size:12px;color:var(--ink-3);margin-top:14px;text-align:left;line-height:1.6}
 .bars{display:flex;align-items:flex-end;gap:26px;height:190px;padding:0 6px}
+/* 카드 안에 들어가는 작은 차트 */
+.minifig{border-top:1px solid var(--line);margin-top:20px;padding-top:18px}
+.minifig .ft{font-size:11px;font-weight:600;letter-spacing:.08em;color:var(--ink-3);margin-bottom:12px;text-align:left}
+.minifig .bars{height:150px;gap:22px}
+.minifig .bbar{flex:0 0 auto}
+section.blue .minifig,section.dark .minifig{border-top-color:rgba(255,255,255,.2)}
+section.blue .minifig .ft,section.dark .minifig .ft{color:rgba(255,255,255,.62)}
 .bcol{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%}
 .bbar{width:100%;max-width:76px;border-radius:10px 10px 0 0;background:var(--line);position:relative}
 .bbar.hi{background:var(--royal)}
@@ -612,7 +622,7 @@ section.blue .zlab>span,section.dark .zlab>span{color:rgba(255,255,255,.5)}
     </div>
     <p class="note pmapnote">광고 대행사 · 개발자 · 물류 담당자와 함께 진행한 구간이 많습니다.
     다만 무엇을 기준으로 판단할지 정하고 방향을 잡는 일은 어느 구간에서든 직접 했습니다.</p>
-    <div class="metrics">
+    <div class="metrics c3">
       <div class="metric">
         <div class="lbl">운영 채널</div>
         <div class="val">12채널+</div>
@@ -900,7 +910,7 @@ section.blue .zlab>span,section.dark .zlab>span{color:rgba(255,255,255,.5)}
         <div class="zlab"><div><b>주간성과 생성기</b><p>RAW 두 개를 올리면 9개 표가 나옵니다. 증액 · 축소 구간까지 판정합니다.</p></div><span>눌러서 확대</span></div>
       </button>
     </div>
-    <p class="cap">실제 도구의 화면 구조를 다시 그린 것입니다. 브랜드명 · 거래처명 · 그룹명과 수치는 모두 가렸습니다.</p>
+    <p class="cap">위 세 화면은 실제 도구의 구조를 다시 그린 것입니다. 화면 안의 브랜드명 · 거래처명 · 그룹명과 수치는 지웠습니다.</p>
 
     <template id="zdash1"><div class="tkwin">
   <div class="tkbar"><b>○○ 일자별 신호판</b><span class="msub">판단하지 않고 신호만 봅니다</span>
@@ -995,9 +1005,15 @@ section.blue .zlab>span,section.dark .zlab>span{color:rgba(255,255,255,.5)}
       <div class="card">
         <div class="no mono">2023 · 지셀라 (엠플랜잇)</div>
         <h3>재정 이슈로 마케팅비가 강제 감축된 상황</h3>
-        <div class="shift" style="margin:14px 0"><span class="a">월 2,000만원</span><span>→</span><span class="b">600만원 (−70%)</span></div>
-        <div class="shift"><span class="a">ROAS 50%</span><span>→</span><span class="b">150%</span></div>
-        <ul style="margin-top:16px">
+        <div class="shift" style="margin:14px 0"><span class="a">월 광고비</span><span>→</span><span class="b">−70%</span></div>
+        <div class="minifig">
+          <div class="ft">ROAS · 전략 수정 전후</div>
+          <div class="bars">
+            <div class="bcol"><div class="bval">50%</div><div class="bbar" style="height:28px"></div><div class="blbl">개선 전</div></div>
+            <div class="bcol"><div class="bval">150%</div><div class="bbar hi" style="height:84px"></div><div class="blbl">개선 후</div></div>
+          </div>
+        </div>
+        <ul style="margin-top:18px">
           <li>제품 전략을 노화 방지·소량 판매·친환경 패키지로 재정의</li>
           <li>브랜드 슬로건·핵심 메시지 재정립으로 인지 경로 단순화</li>
           <li>비효율 매체를 정리하고 전환 기여가 확인된 키워드에 집중</li>
@@ -1006,32 +1022,19 @@ section.blue .zlab>span,section.dark .zlab>span{color:rgba(255,255,255,.5)}
       <div class="card accent">
         <div class="no mono">2026 · 보만코리아</div>
         <h3>판매가 25% 인상 + 광고비 상한이 동시에 걸린 상황</h3>
-        <div class="shift" style="margin:14px 0"><span class="a">광고비중 19.5%</span><span>→</span><span class="b">12.7% (−6.8%p)</span></div>
-        <div class="shift"><span class="a">ROAS 309%</span><span>→</span><span class="b">456%</span></div>
-        <ul style="margin-top:16px">
+        <div class="shift" style="margin:14px 0"><span class="a">광고비중</span><span>→</span><span class="b">−6.8%p</span></div>
+        <div class="minifig">
+          <div class="ft">ROAS · 2024 대비 2026</div>
+          <div class="bars">
+            <div class="bcol"><div class="bval">309%</div><div class="bbar" style="height:57px"></div><div class="blbl">2024</div></div>
+            <div class="bcol"><div class="bval">456%</div><div class="bbar hi" style="height:84px"></div><div class="blbl">2026</div></div>
+          </div>
+        </div>
+        <ul style="margin-top:18px">
           <li>순마진율 +8%p · 절대이익 +6% 이상</li>
           <li>검색 의존도 74.8% → 56.7%로 낮추고 신규 유입 확장</li>
           <li>거래 규모는 계획적으로 축소, 남는 이익을 기준으로 판단</li>
         </ul>
-      </div>
-    </div>
-
-    <div class="grid2" style="margin-bottom:20px">
-      <div class="fig">
-        <div class="ft">ROAS · 지셀라 2023</div>
-        <div class="bars">
-          <div class="bcol"><div class="bval">50%</div><div class="bbar" style="height:20%"></div><div class="blbl">개선 전</div></div>
-          <div class="bcol"><div class="bval">150%</div><div class="bbar hi" style="height:60%"></div><div class="blbl">개선 후</div></div>
-        </div>
-        <p class="cap">광고비를 월 2,000만원에서 600만원으로 줄인 조건에서 기록한 수치입니다.</p>
-      </div>
-      <div class="fig">
-        <div class="ft">ROAS · 보만코리아 2026</div>
-        <div class="bars">
-          <div class="bcol"><div class="bval">309%</div><div class="bbar" style="height:56%"></div><div class="blbl">2024</div></div>
-          <div class="bcol"><div class="bval">456%</div><div class="bbar hi" style="height:83%"></div><div class="blbl">2026</div></div>
-        </div>
-        <p class="cap">광고비중 19.5% → 12.7%, 총액을 늘리지 않은 상태의 개선입니다.</p>
       </div>
     </div>
 
@@ -1047,11 +1050,6 @@ section.blue .zlab>span,section.dark .zlab>span{color:rgba(255,255,255,.5)}
       <div class="lgd"><span><u style="background:var(--royal)"></u>검색 56.7%</span><span><u style="background:var(--royal-2)"></u>배너 42.8%</span></div>
       <p class="cap">위 2024년 / 아래 2026년. 매체를 끈 것이 아니라 캠페인 단위로 비중을 옮긴 결과입니다.</p>
     </div>
-
-    <div class="band">
-      <h3>두 번 모두 같은 판단이었습니다</h3>
-      <p>예산이 줄면 보통 매체를 끕니다. 그런데 문제는 대개 총액이 아니라 배치에 있었습니다. 무엇을 끄느냐가 아니라 같은 예산 안에서 어디에 얼마를 두느냐를 먼저 봤고, 두 번 다 효율이 올라갔습니다.</p>
-    </div>
     <p class="note">※ 지셀라 — 2023년 전략 수정 전후 기준 · 보만 — 2024년 대비 2026년 동기간(1~7월) 기준 · 순마진 = 상품원가·물류비·수수료·부가세·광고비 차감 후</p>
   </div>
 </section>
@@ -1063,10 +1061,9 @@ section.blue .zlab>span,section.dark .zlab>span{color:rgba(255,255,255,.5)}
     <h2>물류와 CS를 고쳐야 판매가 풀렸습니다</h2>
     <p class="lead">광고나 상세페이지를 손대기 전에 배송이 늦고 CS가 쌓이는 게 먼저 문제였습니다. 발주·물류·CS를 직접 들여다보고 프로세스를 다시 짠 뒤, 반복되는 부분은 도구로 묶었습니다.</p>
 
-    <div class="metrics">
-      <div class="metric"><div class="lbl">주문 처리 (2022)</div><div class="val">5h → 1h</div><div class="sub">Python 반자동화</div></div>
+    <div class="metrics c3">
       <div class="metric"><div class="lbl">배송 클레임 (2022)</div><div class="val down">−30%</div><div class="sub">재고·발주 예측 병행</div></div>
-      <div class="metric"><div class="lbl">데이터 취합 (2026)</div><div class="val down">−70%</div><div class="sub">주 4시간 → 1시간</div></div>
+      <div class="metric"><div class="lbl">통합한 매체 RAW</div><div class="val">4개</div><div class="sub">단일 스키마로 통합</div></div>
       <div class="metric dark"><div class="lbl">자체 제작 도구</div><div class="val">7종</div><div class="sub">HTML/JS · Python · Streamlit</div></div>
     </div>
 
@@ -1080,6 +1077,13 @@ section.blue .zlab>span,section.dark .zlab>span{color:rgba(255,255,255,.5)}
           <li>영국 직배송 배대지로 전환, 재고·발주 수량 예측으로 탄력 운영</li>
           <li>주문 수집 → 통관 검증 → 배송대행 신청 → 운송장 입력을 Python으로 반자동화</li>
         </ul>
+        <div class="minifig">
+          <div class="ft">주문 처리 시간 · 4단계 기준</div>
+          <div class="bars">
+            <div class="bcol"><div class="bval">5h+</div><div class="bbar" style="height:84px"></div><div class="blbl">수작업</div></div>
+            <div class="bcol"><div class="bval">1h대</div><div class="bbar hi" style="height:18px"></div><div class="blbl">반자동화 후</div></div>
+          </div>
+        </div>
       </div>
       <div class="card accent">
         <div class="no mono">2026 · 보만코리아</div>
@@ -1090,25 +1094,13 @@ section.blue .zlab>span,section.dark .zlab>span{color:rgba(255,255,255,.5)}
           <li>발주서 일괄 변환기 — 타 담당자에게 이관되어 운영 중</li>
           <li>광고 소재·배너 생성기 — 규격별 자동 조판, 소재ID 자동 발번</li>
         </ul>
-      </div>
-    </div>
-
-    <div class="grid2" style="margin-bottom:20px">
-      <div class="fig">
-        <div class="ft">주문 처리 시간 · 엠플랜잇 2022</div>
-        <div class="bars">
-          <div class="bcol"><div class="bval">5h+</div><div class="bbar" style="height:88%"></div><div class="blbl">수작업</div></div>
-          <div class="bcol"><div class="bval">1h대</div><div class="bbar hi" style="height:20%"></div><div class="blbl">반자동화 후</div></div>
+        <div class="minifig">
+          <div class="ft">데이터 취합 시간 · 4개 매체 RAW 통합</div>
+          <div class="bars">
+            <div class="bcol"><div class="bval">4h</div><div class="bbar" style="height:84px"></div><div class="blbl">주 단위</div></div>
+            <div class="bcol"><div class="bval">1h</div><div class="bbar hi" style="height:21px"></div><div class="blbl">파이프라인 구축 후</div></div>
+          </div>
         </div>
-        <p class="cap">주문 수집 → 통관 검증 → 배송대행 신청 → 운송장 입력 4단계 기준.</p>
-      </div>
-      <div class="fig">
-        <div class="ft">데이터 취합 시간 · 보만코리아 2026</div>
-        <div class="bars">
-          <div class="bcol"><div class="bval">4h</div><div class="bbar" style="height:80%"></div><div class="blbl">주 단위</div></div>
-          <div class="bcol"><div class="bval">1h</div><div class="bbar hi" style="height:20%"></div><div class="blbl">파이프라인 구축 후</div></div>
-        </div>
-        <p class="cap">4개 매체 RAW를 단일 스키마로 통합해 주간 취합 시간을 70% 줄였습니다.</p>
       </div>
     </div>
 
